@@ -1,0 +1,589 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #EEE2D6; /* Warm off-white background */
+    color: #4D1717;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Color Variables */
+:root {
+    --primary-color: #841616; /* Appetizing orange/red */
+    --primary-hover: #B51818;
+    --secondary-color: #4a5c44; /* Herb green */
+    --bg-card: #FFFAF5;
+    --text-muted: #4D171799; /* Muted text with opacity */
+}
+
+/* Navigation Bar */
+.navbar {
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #FFFAF5; /* Adăugat un fundal pentru claritate */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-bar {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 300px;
+    background-color: #FFFAF5;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-item {
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary, 
+.btn-secondary, 
+.tab-button, 
+.btn-small {
+    border-radius: 25px !important; /* Forțează rotunjirea completă a marginilor */
+    padding: 10px 20px !important;  /* Oferă spațiu aerisit în interiorul butonului */
+}
+
+.btn-primary {
+    background-color: #ff6b6b !important; /* Roșu aprins SPICE */
+    color: #ffffff !important;             /* Text alb pentru contrast */
+    border: none !important;
+    font-weight: bold !important;
+}
+
+.btn-primary:hover {
+    background-color: #ff5252 !important; /* Nuanță ușor mai închisă la hover */
+}
+
+.btn-secondary {
+    background-color: #eeeeee !important; /* Gri deschis pentru butoanele secundare */
+    color: #333333 !important;             /* Text închis la culoare */
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 25px !important;
+    cursor: pointer !important;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    background-color: #EEE2D6;
+    color: #4D1717;
+}
+
+/* Main App Layout */
+.app-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Sidebars */
+.profile-card {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.sidebar-menu {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.sidebar-menu li {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+.view-profile-button {
+    cursor: pointer !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.view-profile-button:hover {
+    color: #ff6b6b !important; /* Schimbă textul în culoarea roșiatică SPICE la hover */
+    text-decoration: underline !important; /* Subliniere fină la hover */
+    opacity: 0.9 !important;
+}
+
+.sidebar-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Feed & Posts */
+.create-post {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.create-post input {
+    flex: 1;
+    border: none;
+    background-color: #EEE2D6;
+    padding: 0.8rem;
+    border-radius: 20px;
+}
+
+.post {
+    background-color: #ffffff !important; /* Fundal alb curat pentru fiecare rețetă/postare */
+    padding: 20px !important;              /* Spațiu interior ca textul să nu atingă marginea */
+    border-radius: 12px !important;        /* Margini rotunjite moderne */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important; /* O umbră fină care scoate postarea în evidență */
+    
+    /* Păstrăm regulile anterioare anti-suprapunere */
+    height: auto !important;
+    min-height: min-content !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    margin-bottom: 25px !important;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    gap: 1rem;
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.timestamp {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.post-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    height: auto !important;
+    position: relative !important;
+}
+
+.recipe-title, .recipe-desc {
+    position: relative !important;
+    margin: 0 !important;
+    height: auto !important;
+    word-wrap: break-word !important;
+}
+
+.post-image {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    float: none !important;
+    margin-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.post-image img {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important; /* Limitează înălțimea imaginilor uriașe */
+    object-fit: cover !important; /* Păstrează proporțiile imaginii tăind marginile inutile */
+    border-radius: 10px !important;
+}
+
+.post-actions {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.action-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #f1efeb;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Authentication Pages (Login / Register)
+   ========================================= */
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #EEE2D6;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 1rem;
+}
+
+.auth-card {
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #FFFAF5;
+}
+
+.auth-logo {
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.auth-subtitle {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.auth-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4D1717;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #faf9f7;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.auth-links {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-links p {
+    margin-bottom: 0.5rem;
+}
+
+.auth-links a, .auth-links span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* =========================================================
+   FIX: ALINIERE ȘI STIL LOGO SVG ÎN NAVBAR
+   ========================================================= */
+
+/* Asigură-te că containerul navbar aliniază elementele pe verticală */
+.nav-container {
+    display: flex !important;
+    align-items: center !important; /* Aliniere verticală pe centru */
+    justify-content: space-between !important;
+    height: 100% !important;
+}
+
+/* Stil pentru noul logo imagine */
+.logo-img {
+    height: 80px !important; /* Ajustează înălțimea logo-ului */
+    width: auto !important;
+    cursor: pointer !important;
+    object-fit: contain !important; /* Păstrează proporțiile SVG-ului */
+}
+
+/* =========================================================
+   📱 OPTIMIZARE PENTRU TELEFON (MOBILE RESPONSIVE)
+   ========================================================= */
+/* =========================================================
+   📱 OPTIMIZARE PENTRU TELEFON (MOBILE RESPONSIVE & BOTTOM NAV)
+   ========================================================= */
+@media screen and (max-width: 768px) {
+    /* 1. Setări generale container */
+    .app-container {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px !important;
+        margin: 0 !important;
+        /* Foarte important: Lăsăm spațiu gol jos ca să nu acopere meniul ultimele postări! */
+        padding-bottom: 90px !important; 
+    }
+
+    /* 2. ASCUNDEM AVATARUL ȘI NUMELE PE HOME */
+    .profile-card > .profile-avatar,
+    .profile-card > h2,
+    .profile-card > p {
+        display: none !important;
+    }
+
+    /* 3. TRANSFORMĂM SIDEBAR-UL ÎN BOTTOM NAV BAR */
+    .sidebar-left {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background-color: #ffffff !important;
+        z-index: 9999 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.08) !important;
+        border-top: 1px solid #eaeaea !important;
+    }
+
+    /* Eliminăm stilul de "card" cu umbre pe telefon */
+    .profile-card {
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    /* 4. AȘEZĂM BUTOANELE PE ORIZONTALĂ */
+    .sidebar-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        list-style: none !important;
+        /* Permitem swipe stânga-dreapta dacă sunt multe butoane */
+        overflow-x: auto !important; 
+        -webkit-overflow-scrolling: touch; 
+        gap: 10px !important;
+    }
+    
+    /* Ascundem scrollbar-ul pentru un aspect curat */
+    .sidebar-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 5. STILIZĂM BUTOANELE CA "PASTILE" MODERNE */
+    .sidebar-menu li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .sidebar-menu a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 13px !important; 
+        white-space: nowrap !important; /* Ține textul pe un singur rând */
+        padding: 10px 18px !important;
+        background-color: #f0f2f5 !important;
+        border-radius: 25px !important; /* Formă rotunjită */
+        color: #333 !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+    }
+
+    /* Butonul de Logout (dacă are roșu) să fie evidențiat finuț */
+    .sidebar-menu a[style*="red"] {
+        background-color: #ffe5e5 !important;
+        color: #d93025 !important;
+    }
+
+    /* =============================================
+       RESTUL STILURILOR DE RESPONSIVE (FEED)
+       ============================================= */
+    .feed {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .nav-container {
+        flex-wrap: wrap !important;
+        height: auto !important;
+        padding: 10px !important;
+        justify-content: space-between !important;
+    }
+
+    .search-bar {
+        width: 100% !important;
+        order: 3 !important; 
+        margin-top: 15px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .post {
+        padding: 15px !important;
+        margin-bottom: 15px !important;
+        border-radius: 10px !important;
+    }
+
+    .post-actions {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 5px !important;
+        justify-content: space-between !important;
+    }
+
+    .action-btn {
+        font-size: 13px !important;
+        padding: 8px 5px !important;
+        flex: 1 !important; 
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* =========================================================
+    STILURI RESPONSIVE PENTRU PAGINA DE CHAT (MOBILE-FIRST)
+   ========================================================= */
+
+/* Containerul principal pe desktop */
+.chat-page-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* Sidebar-ul cu contacte pe desktop */
+.chat-sidebar {
+    width: 350px;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+/* Fereastra principală de conversație pe desktop */
+.chat-main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f2f5;
+}
+
+/* Butonul de înapoi pe mobil (ascuns implicit pe desktop) */
+.chat-mobile-back-btn {
+    display: none !important;
+}
+
+/* 📱 REGULI SPECIALE PENTRU TELEFOANE (Ecrane sub 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* Dacă lista e activă și chat-ul e gol, ascundem fereastra dreaptă */
+    .chat-main-area.chat-empty-mobile {
+        display: none !important;
+    }
+
+    /* Când intrăm într-o conversație activă pe mobil: */
+    /* 1. Ascundem complet lista de contacte */
+    .chat-sidebar.chat-active-mobile {
+        display: none !important;
+    }
+
+    /* 2. Lățim sidebar-ul la 100% când nu avem chat selectat */
+    .chat-sidebar {
+        width: 100% !important;
+    }
+
+    /* Afișăm butonul de întoarcere la listă doar pe telefon */
+    .chat-mobile-back-btn {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        font-size: 20px !important;
+        cursor: pointer !important;
+        padding: 5px 10px !important;
+        color: var(--primary-color) !important;
+    }
+    
+    /* Micșorăm bulele de text pe ecranul îngust al telefonului */
+    .chat-message-bubble {
+        max-width: 85% !important;
+        font-size: 15px !important;
+    }
+}
